@@ -1,0 +1,13 @@
+﻿@page "/Calc1/{handler?}"
+@model AspNetCoreKurs_Berlin.Pages.Modul03.Calc1Model
+@{
+}
+
+
+<h1>calc1</h1>
+<form method="post">
+    <input name="eins" /><br />
+    <input name="zwei" /><br />
+    <button type="submit">add</button>
+    @Model.Ergebnis
+</form>

@@ -1,0 +1,30 @@
+﻿@page
+@model AspNetCoreKurs_Berlin.Modul03.IndexAModel
+@{
+    ViewData["Title"] = "IndexA";
+}
+
+<h1>IndexA</h1>
+
+@Model.MyProperty, sadjklfbaksdjfhbasdfbkj
+
+<div style='@(Model.MyProperty==7?"background-color:yellow":"background-color:orange")'>demo</div>
+
+@if (Model.MyProperty == 7)
+{
+    <div style="background-color:green">demo</div>
+}
+else
+{
+    <div style="background-color:blue">demo</div>
+}
+
+@for (int i = 0; i < 7; i++)
+{
+    @DateTime.Now.AddDays(i).ToString("dddd");
+    <br />
+}
+
+<hr />
+
+
