@@ -1,0 +1,51 @@
+﻿@page
+@model AspNetCoreKurs_Berlin.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+@*https://www.w3schools.com/bootstrap4/bootstrap_modal.asp*@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Aufgaben[0].Text)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Aufgaben[0].DeadlineDatum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Aufgaben[0].AufgabeFertig)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Aufgaben)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Text)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DeadlineDatum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AufgabeFertig)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

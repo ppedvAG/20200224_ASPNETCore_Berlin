@@ -11,7 +11,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">AspNetCoreKurs Berlin</a>
+                <a class="navbar-brand" asp-area="" asp-page="/Index">ASP.NET Core Schulung Berlin</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -23,6 +23,36 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                        </li>
+
+                        <!-- Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                Beispiel:  Menüerstellung
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/Modul05/GallerySample1">Gallery Sample 1</a>
+                                <a class="dropdown-item" href="/Modul05/GallerySample2">Gallery Sample 2</a>
+
+                            </div>
+                        </li>
+
+
+                        <li class="nav-item dropdown show">
+                            <a class="nav-link dropdown-toggle text-dark" aria-expanded="false" aria-haspopup="true" asp-area="" asp-page="/Privacy" data-toggle="dropdown">Bootstraps Samples</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown03">
+                                <a class="dropdown-item" asp-page="/Movie/Index">Übersicht</a>
+                                <a class="dropdown-item" href="/Movie/Create">Erstellen</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown show">
+                            <a class="nav-link dropdown-toggle text-dark" aria-expanded="false" aria-haspopup="true" asp-area="" asp-page="/Privacy" data-toggle="dropdown">MovieDB</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown03">
+                                <a class="dropdown-item" asp-page="/Movie/Index">Übersicht</a>
+                                <a class="dropdown-item" href="/Movie/Create">Erstellen</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
                         </li>
                     </ul>
                 </div>

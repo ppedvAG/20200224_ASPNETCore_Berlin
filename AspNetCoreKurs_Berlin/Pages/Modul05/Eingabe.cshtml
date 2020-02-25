@@ -1,0 +1,12 @@
+﻿@page
+@model AspNetCoreKurs_Berlin.EingabeModel
+@{
+    ViewData["Title"] = "Eingabe";
+}
+
+<h1>Eingabe</h1>
+
+<form method="post">
+    <input name="eins" />
+    <input type="submit" asp-page-handler="tuwas" />
+</form>

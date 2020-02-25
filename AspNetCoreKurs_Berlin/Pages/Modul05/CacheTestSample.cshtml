@@ -1,0 +1,15 @@
+﻿@page
+@model AspNetCoreKurs_Berlin.CacheTestSampleModel
+@{
+    ViewData["Title"] = "CacheTestSample";
+}
+
+<h1>CacheTestSample</h1>
+
+@DateTime.Now
+<hr/>
+
+<cache expires-after="@new TimeSpan(0,0,30)" vary-by="none">
+    @DateTime.Now
+</cache>
+

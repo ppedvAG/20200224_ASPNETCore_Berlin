@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using AspNetCoreKurs_Berlin.Data;
 
 namespace AspNetCoreKurs_Berlin
 {
@@ -25,6 +27,12 @@ namespace AspNetCoreKurs_Berlin
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddControllers();
+            services.AddDbContext<AufgabenContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("AufgabenContext")));
+
+
+            //services.AddResponseCaching();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,10 +54,10 @@ namespace AspNetCoreKurs_Berlin
             }
 
             AppDomain.CurrentDomain.SetData("BildVerzeichnis", env.WebRootPath);
-
+            //app.UseResponseCaching();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            
             app.UseRouting();
 
             app.UseAuthorization();
@@ -62,6 +70,7 @@ namespace AspNetCoreKurs_Berlin
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapControllers();
             });
         }
     }
