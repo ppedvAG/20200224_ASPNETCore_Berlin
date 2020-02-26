@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using AspNetCoreKurs_Berlin.Data;
+using Microsoft.AspNetCore.Localization;
+using System.Globalization;
 
 namespace AspNetCoreKurs_Berlin
 {
@@ -52,6 +54,19 @@ namespace AspNetCoreKurs_Berlin
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            //var supportedCultures = new[]
+            //{
+            //    new CultureInfo("de-DE"),
+
+            //};
+            //app.UseRequestLocalization(new RequestLocalizationOptions
+            //{
+            //    DefaultRequestCulture = new RequestCulture("de-DE"),
+            //    // Formatting numbers, dates, etc.
+            //    SupportedCultures = supportedCultures,
+            //    // UI strings that we have localized.
+            //    SupportedUICultures = supportedCultures
+            //});
 
             AppDomain.CurrentDomain.SetData("BildVerzeichnis", env.WebRootPath);
             //app.UseResponseCaching();

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace AspNetCoreKurs_Berlin.Data
 {
@@ -11,7 +11,12 @@ namespace AspNetCoreKurs_Berlin.Data
         public AufgabenContext (DbContextOptions<AufgabenContext> options)
             : base(options)
         {
+            //https://docs.microsoft.com/de-de/ef/core/miscellaneous/configuring-dbcontext
+
+            
         }
+
+          
 
         public DbSet<AspNetCoreKurs_Berlin.Data.Aufgaben> Aufgaben { get; set; }
     }

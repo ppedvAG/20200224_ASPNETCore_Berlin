@@ -14,6 +14,8 @@ namespace AspNetCoreKurs_Berlin.Data
         [MinLength(2, ErrorMessage ="mindesten 2 Zeichen")]
         public string Text { get; set; }
 
+        [Display(Name = "Release Date")]
+        [DataType(DataType.Date)]
         
         public DateTime DeadlineDatum { get; set; }
 
