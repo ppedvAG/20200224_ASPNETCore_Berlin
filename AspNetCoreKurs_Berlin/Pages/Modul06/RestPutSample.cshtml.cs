@@ -15,23 +15,22 @@ namespace AspNetCoreKurs_Berlin
         {
 
         }
-
         public void OnPostUpdate()
         {
-            using (var client = new HttpClient())
-            {
-                Aufgaben aufgabe = new Aufgaben { Text = "TestAufgabe", DeadlineDatum=DateTime.Now, AufgabeFertig=false };
-                client.BaseAddress = new Uri("http://localhost:1565/");
+            //using (var client = new HttpClient())
+            //{
+            //    Aufgaben aufgabe = new Aufgaben { Text = "TestAufgabe", DeadlineDatum=DateTime.Now, AufgabeFertig=false };
+            //    client.BaseAddress = new Uri("http://localhost:1565/");
 
 
-                var response = client.PostAsync("api/person", aufgabe).Result;
-                if (response.IsSuccessStatusCode)
-                {
-                    Console.Write("Success");
-                }
-                else
-                    Console.Write("Error");
-            }
+            //    var response = client.PostAsync("api/person", aufgabe).Result;
+            //    if (response.IsSuccessStatusCode)
+            //    {
+            //        Console.Write("Success");
+            //    }
+            //    else
+            //        Console.Write("Error");
+            //}
         }
     }
 }
