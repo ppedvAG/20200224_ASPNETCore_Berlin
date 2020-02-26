@@ -60,7 +60,9 @@ namespace WebMVCSample.Controllers
             {
                 _context.Add(kurs);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+
+                return RedirectToAction("Index", "Home");
+               // return RedirectToAction(nameof(Index));
             }
             return View(kurs);
         }

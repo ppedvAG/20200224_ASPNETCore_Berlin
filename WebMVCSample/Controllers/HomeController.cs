@@ -28,6 +28,11 @@ namespace WebMVCSample.Controllers
             return View();
         }
 
+        public IActionResult Kurse()
+        {
+            return RedirectToAction("Index", "Kurs");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
